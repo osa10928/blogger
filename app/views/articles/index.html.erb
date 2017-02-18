@@ -9,3 +9,12 @@
 </ul>
 
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<br><br>
+<p>
+	Tags <br>
+	<% @articles.each do |article| %>
+	    <% article.tags.each do |tag|%>
+	  	    <%= link_to tag.name, tag_path(tag) %>
+	  	<% end %>
+	<% end %>
+</p>
